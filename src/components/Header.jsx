@@ -5,16 +5,14 @@ import Navbar from 'react-bootstrap/Navbar';
 //import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import LoginModal from './LoginModal';
-import SignUpModal from './SignUpModal';
+import LoginModal from './Login/LoginModal';
+import SignUpModal from './SignUp/SignUpModal';
 
 const Header = () => {
     const [modalLoginShow, setModalLoginShow] = useState(false);
     const [modalSignUpShow, setModalSignUpShow] = useState(false);
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
-            <SignUpModal />
-            <LoginModal />
             <Container>
                 <NavLink to="/" className='navbar-brand'><img src={logo} width={"150"} alt="logo" /></NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -27,11 +25,6 @@ const Header = () => {
                     <Nav>
                         <button className='btn btn-outline-primary me-2' onClick={() => setModalLoginShow(true)}>Đăng nhập</button>
                         <button className='btn btn-primary' onClick={() => setModalSignUpShow(true)}>Đăng ký</button>
-                        {/* <NavDropdown title="Setting" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Login</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.1">Logout</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
-                        </NavDropdown> */}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
