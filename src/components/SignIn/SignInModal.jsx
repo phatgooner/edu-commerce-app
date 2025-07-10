@@ -38,6 +38,7 @@ const SignInModal = (props) => {
                         <div>
                             <Skeleton height={40} className="mb-3" />
                             <Skeleton height={40} className="mb-3" />
+                            <Skeleton height={40} className="mb-3" />
                             <Skeleton height={40} />
                         </div>
                     )}

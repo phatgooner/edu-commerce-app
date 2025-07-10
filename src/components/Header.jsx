@@ -20,7 +20,12 @@ const Header = () => {
             />
             <Navbar expand="lg" className="bg-body-tertiary">
                 <Container>
-                    <NavLink to="/" className='navbar-brand'><img src={logo} width={"150"} alt="logo" /></NavLink>
+                    <NavLink to="/" className='navbar-brand'><img onClick={() => {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth',
+                        });
+                    }} src={logo} width={"150"} alt="logo" /></NavLink>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
