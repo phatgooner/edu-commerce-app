@@ -3,7 +3,7 @@
   --secondary: #313140;
 }
 
-.text-primary {
+.text-main {
   color: var(--primary) !important;
 }
 
@@ -135,5 +135,19 @@ body {
 
   .review-content {
     flex: 1;
+  }
+}
+
+.card {
+  .card-content {
+    &:hover {
+      background-color: rgb(248, 249, 250);
+    }
+  }
+}
+
+.teachers-list {
+  form {
+    background-color: white;
   }
 }

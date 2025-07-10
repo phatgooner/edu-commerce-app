@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Button, Col, Row, Badge } from 'react-bootstrap';
 import { FaStar, FaHeart } from 'react-icons/fa';
+import { toast } from 'react-toastify';
+
 
 const TeacherCard = ({ teacher }) => {
+    const [isLiked, setLiked] = useState(false)
 
+    const handleSetLiked = () => {
+        isLiked ? toast.success('Đã xóa khỏi danh sách yêu thích') : toast.success('Đã thêm vào danh sách yêu thích')
+        setLiked(!isLiked);
+    }
     return (
         <Card className="shadow-sm rounded-4 overflow-hidden my-4">
-            <Row className="g-0 align-items-center">
+            <Row className="g-0 align-items-center card-content">
                 <Col md={3} lg={2} className="position-relative text-center">
                     <img
                         src={teacher.avatar}
@@ -48,11 +55,11 @@ const TeacherCard = ({ teacher }) => {
                         </div>
                         <div className="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-2">
                             <div>
-                                <span className="fw-bold fs-5">USD {teacher.rate.toFixed(2)}</span>{' '}
+                                <span className="fw-bold fs-5">{teacher.rate.toFixed(2)} USD</span>{' '}
                                 <span className="text-muted fs-6"></span>
                             </div>
                             <div className="d-flex gap-2">
-                                <Button variant="outline-secondary" className='rounded-pill'>
+                                <Button variant={isLiked ? "primary" : "outline-primary"} className='rounded-pill' onClick={() => handleSetLiked()}>
                                     <FaHeart />
                                 </Button>
                                 <Button variant="primary">Đăng ký học</Button>

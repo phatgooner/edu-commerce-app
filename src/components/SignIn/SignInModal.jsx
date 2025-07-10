@@ -29,7 +29,7 @@ const SignInModal = (props) => {
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        Chào mừng bạn đến với talkable!
+                        Chào mừng bạn đến với <span className="text-main">talkable!</span>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>

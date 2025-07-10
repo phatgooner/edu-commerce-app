@@ -2,7 +2,7 @@ import Banner from "../components/Banner";
 import BestTeachers from "../components/Teachers/BestTeachers";
 import ReviewCarousel from '../components/ReviewCarousel'
 
-const Homepage = (props) => {
+const Homepage = () => {
     return (
         <div className="homepage-content">
             <div className="banner py-5 bg-white">

@@ -23,13 +23,13 @@ const Banner = () => {
                     </h1>
                     <ul className="list-unstyled fs-6 text-muted mb-4">
                         <li className="mb-2">
-                            <BsChatRightDotsFill style={{ color: "#00bfff" }} /> Thực hiện bài học tùy chỉnh 1 thầy kèm 1 trò được hàng triệu người dùng tin tưởng
+                            <BsChatRightDotsFill className='text-main' /> Thực hiện bài học tùy chỉnh 1 thầy kèm 1 trò được hàng triệu người dùng tin tưởng
                         </li>
                         <li className="mb-2">
-                            <BsChatRightDotsFill style={{ color: "#00bfff" }} /> Học với giáo viên đã được chứng nhận phù hợp với thời khóa biểu của bạn
+                            <BsChatRightDotsFill className='text-main' /> Học với giáo viên đã được chứng nhận phù hợp với thời khóa biểu của bạn
                         </li>
                         <li>
-                            <BsChatRightDotsFill style={{ color: "#00bfff" }} /> Kết nối với cộng đồng toàn cầu của những người học ngôn ngữ
+                            <BsChatRightDotsFill className='text-main' /> Kết nối với cộng đồng toàn cầu của những người học ngôn ngữ
                         </li>
                     </ul>
                     <Button variant="primary" size="lg" onClick={() => { setModalType('signup'); setModalShow(true); }}>
