@@ -3,6 +3,10 @@
   --secondary: #313140;
 }
 
+.text-primary {
+  color: var(--primary) !important;
+}
+
 .btn {
   &.btn-primary {
     background-color: var(--primary) !important;
@@ -43,6 +47,28 @@
       background-color: var(--secondary) !important;
       border: 1px solid var(--secondary) !important;
       color: white !important;
+    }
+  }
+}
+
+.pagination {
+  .page-item {
+    margin: 0 4px;
+
+    .page-link {
+      color: var(--secondary);
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    &.active {
+      .page-link {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: #fff;
+        border-radius: 8px;
+        font-weight: bold;
+      }
     }
   }
 }

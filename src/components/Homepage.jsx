@@ -1,8 +1,12 @@
+import Banner from "./Banner"
+
 const Homepage = (props) => {
     return (
         <div className="homepage-container">
             <div className="homepage-content">
-                HomePage
+                <div className="banner">
+                    <Banner />
+                </div>
             </div>
         </div>
     )

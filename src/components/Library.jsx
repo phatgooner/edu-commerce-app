@@ -3,6 +3,7 @@ const About = (props) => {
         <div className="library-container">
             <div className="library-content">
                 Lỉbrary
+                {console.log('>>> check library')}
             </div>
         </div>
     )

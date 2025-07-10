@@ -4,7 +4,7 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Library from './components/Library';
-import Teachers from './components/Teachers';
+import Teachers from './components/Teachers/Teachers';
 import Community from './components/Community';
 import Homepage from './components/Homepage';
 
