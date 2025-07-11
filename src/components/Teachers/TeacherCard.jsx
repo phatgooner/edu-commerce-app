@@ -55,7 +55,7 @@ const TeacherCard = ({ teacher }) => {
                         </div>
                         <div className="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-2">
                             <div>
-                                <span className="fw-bold fs-5">{teacher.rate.toFixed(2)} USD</span>{' '}
+                                <span className="fw-bold fs-5">USD {teacher.rate.toFixed(2)}</span>{' '}
                                 <span className="text-muted fs-6"></span>
                             </div>
                             <div className="d-flex gap-2">

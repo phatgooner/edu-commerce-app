@@ -11,7 +11,7 @@ const ReviewCarousel = () => {
     return (
         <Container>
             <h1 className="fw-bold text-center" style={{ fontSize: '3rem' }}>
-                Các học viên nói gì về <span className='text-main'>talkable</span>
+                Học viên nói gì về <span className='text-main'>talkable</span>
             </h1>
             <Swiper
                 modules={[Navigation, Autoplay]}
