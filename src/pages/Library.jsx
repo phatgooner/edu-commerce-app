@@ -1,4 +1,5 @@
-import BookList from "../components/Library/BookList"
+import BookList from "../components/Library/BookList";
+import libraryData from "../data/library";
 
 const Library = () => {
     return (
@@ -10,7 +11,7 @@ const Library = () => {
                 <p class="leading-5 text-gray3 mb-0 mt-1 fs-5">Lựa chọn từ những tác giả hàng đầu để có được trải nghiệm học tốt nhất.</p>
             </div>
             <div className="book-list bg-light">
-                <BookList />
+                <BookList libraryData={libraryData} />
             </div>
 
         </div>

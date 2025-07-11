@@ -5,9 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Library from './pages/Library';
 import Teachers from './pages/Teachers';
-import Community from './pages/Community';
 import Homepage from './pages/Homepage';
-import ScrollToTop from './components/ScrollToTop'
+import FAQs from './pages/FAQs';
+import ScrollToTop from './components/ScrollToTop';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,7 +19,7 @@ root.render(
           <Route index element={<Homepage />} />
           <Route path="/library" element={<Library />} />
           <Route path="/teachers" element={<Teachers />} />
-          <Route path="/community" element={<Community />} />
+          <Route path="/faqs" element={<FAQs />} />
         </Route>
       </Routes>
     </BrowserRouter>

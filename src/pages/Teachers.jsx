@@ -1,4 +1,5 @@
 import TeacherList from '../components/Teachers/TeacherList'
+import teachersData from '../data/teachers';
 
 const Teachers = () => {
     return (
@@ -10,11 +11,9 @@ const Teachers = () => {
                 <p class="leading-5 text-gray3 mb-0 mt-1 fs-5">Lựa chọn từ những giáo viên ngoại ngữ trực tuyến có kinh nghiệm của chúng tôi để có được trải nghiệm học tốt nhất.</p>
             </div>
             <div className="teacher-list bg-light">
-                <TeacherList />
+                <TeacherList teachers={teachersData} />
             </div>
-
         </div>
-
     )
 }
 

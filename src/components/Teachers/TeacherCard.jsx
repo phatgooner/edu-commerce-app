@@ -3,7 +3,6 @@ import { Card, Button, Col, Row, Badge } from 'react-bootstrap';
 import { FaStar, FaHeart } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
-
 const TeacherCard = ({ teacher }) => {
     const [isLiked, setLiked] = useState(false)
 
@@ -56,7 +55,6 @@ const TeacherCard = ({ teacher }) => {
                         <div className="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-2">
                             <div>
                                 <span className="fw-bold fs-5">USD {teacher.price.toFixed(2)}</span>{' '}
-                                <span className="text-muted fs-6"></span>
                             </div>
                             <div className="d-flex gap-2">
                                 <Button variant={isLiked ? "primary" : "outline-primary"} className='rounded-pill' onClick={() => handleSetLiked()}>

@@ -1,11 +1,15 @@
 :root {
   --primary: #00bfff;
-  --secondary: #313140;
+  --secondary: #646464;
   --light: rgb(248, 249, 250);
 }
 
 .text-main {
   color: var(--primary) !important;
+}
+
+.text-justify {
+  text-align: justify;
 }
 
 .btn {
@@ -73,7 +77,6 @@
     }
   }
 }
-
 
 body {
   padding: 0;
@@ -157,5 +160,36 @@ body {
 .book-list {
   form {
     background-color: white;
+  }
+}
+
+.accordion {
+  .accordion-item {
+    padding: 0.5rem 0;
+
+    &:first-child {
+      border-top: 1px solid #dee2e6 !important;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid #dee2e6 !important;
+    }
+
+
+    .accordion-header {
+      .accordion-button {
+        font-weight: bold !important;
+        color: var(--secondary) !important;
+
+        &:not(.collapsed) {
+          background-color: transparent;
+          box-shadow: none;
+        }
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
   }
 }

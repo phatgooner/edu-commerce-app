@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import teachers from '../../data/teachers';
 import ReactPaginate from 'react-paginate';
 import TeacherCard from './TeacherCard';
 import SearchBar from '../SearchBar';
 import SortBar from '../SortBar';
 import arraySort from '../../helpers/arraySort';
 
-const TeacherList = () => {
+const TeacherList = ({ teachers }) => {
     // Filter
     const [filters, setFilters] = useState({
         search: '',

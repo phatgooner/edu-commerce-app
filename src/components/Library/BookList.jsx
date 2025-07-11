@@ -1,14 +1,13 @@
 import React from "react";
 import BookCard from "./BookCard";
 import ReactPaginate from 'react-paginate';
-import libraryData from "../../data/library";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import SearchBar from "../SearchBar";
 import SortBar from "../SortBar";
 import arraySort from "../../helpers/arraySort";
 
-const BookList = () => {
+const BookList = ({ libraryData }) => {
     // Filter
     const [filters, setFilters] = useState({
         search: '',

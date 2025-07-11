@@ -5,9 +5,8 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import { FaStar } from 'react-icons/fa';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import reviews from '../data/reviews'
 
-const ReviewCarousel = () => {
+const ReviewCarousel = ({ reviews }) => {
     return (
         <Container>
             <h1 className="fw-bold text-center" style={{ fontSize: '3rem' }}>

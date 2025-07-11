@@ -1,14 +1,13 @@
 import TeacherCard from "./TeacherCard";
-import teachersData from '../../data/teachers';
 import { Container, Row, Col } from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
 
-const teachers = teachersData.filter(teacher => teacher.rating === 5.0)
-const BestTeachers = () => {
+const FeaturedTeachers = ({ teachersData }) => {
+    const teachers = teachersData.filter(teacher => teacher.rating === 5.0)
     return (
         <Container>
             <h1 className="fw-bold text-center" style={{ fontSize: '3rem' }}>
-                Giáo viên tốt nhất dành cho bạn
+                Giao tiếp với những giáo viên hàng đầu
             </h1>
             <Row>
                 {teachers.map((teacher) => (
@@ -22,4 +21,4 @@ const BestTeachers = () => {
     )
 }
 
-export default BestTeachers;
+export default FeaturedTeachers;
