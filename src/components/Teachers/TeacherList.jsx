@@ -6,7 +6,7 @@ import TeacherCard from './TeacherCard';
 import SearchBar from '../SearchBar';
 
 const TeachersList = (props) => {
-    const [currentPage, setCurrentPage] = useState(0);
+    // Filter
     const [filters, setFilters] = useState({
         search: '',
         language: '',
@@ -34,6 +34,7 @@ const TeachersList = (props) => {
     });
 
     // Pagination
+    const [currentPage, setCurrentPage] = useState(0);
     const ITEMS_PER_PAGE = 5;
     const offset = currentPage * ITEMS_PER_PAGE;
     const currentItems = filteredTeachers.slice(offset, offset + ITEMS_PER_PAGE);
@@ -47,9 +48,12 @@ const TeachersList = (props) => {
         });
     };
 
+    // Render
     return (
         <Container className="py-2">
-            <SearchBar filters={filters}
+            <SearchBar
+                typeName={'giáo viên'}
+                filters={filters}
                 onFilterChange={setFilters}
                 languageOptions={languageList} />
             <Row>

@@ -3,6 +3,7 @@ import { Row, Col, Form, InputGroup } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
 
 const SearchBar = ({
+    typeName,
     filters,
     onFilterChange,
     languageOptions = []
@@ -19,11 +20,11 @@ const SearchBar = ({
             <Row className="g-3 align-items-end">
                 {/* Search by name */}
                 <Col md={4}>
-                    <Form.Label>Tên giáo viên</Form.Label>
+                    <Form.Label>Tên {typeName}</Form.Label>
                     <InputGroup>
                         <Form.Control
                             type="text"
-                            placeholder="Nhập tên giáo viên..."
+                            placeholder={`Nhập tên ${typeName}...`}
                             name="search"
                             value={filters.search}
                             onChange={(e) => handleChange(e)}
