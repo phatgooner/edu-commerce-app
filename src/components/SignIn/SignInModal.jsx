@@ -1,12 +1,13 @@
 import Modal from 'react-bootstrap/Modal';
 import LoginForm from './LoginForm';
-import SignUpForm from './SignUpForm';
+import RegisterForm from './RegisterForm';
 import { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 const SignInModal = (props) => {
     const [modalType, setModalType] = useState('');
+    const [isOpen, setIsOpen] = useState(true);
 
     useEffect(() => {
         setModalType(props.modalType)
@@ -19,9 +20,13 @@ const SignInModal = (props) => {
         }, 1000);
     }
 
+    const handleShowModal = (isShow) => {
+        setIsOpen(isShow)
+    }
+
     return (
         <>
-            <Modal
+            {isOpen && <Modal
                 {...props}
                 size="md"
                 aria-labelledby="contained-modal-title-vcenter"
@@ -33,7 +38,7 @@ const SignInModal = (props) => {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    {modalType === 'login' && <LoginForm />}
+                    {modalType === 'login' && <LoginForm handleShowModal={handleShowModal} />}
                     {modalType === 'loading' && (
                         <div>
                             <Skeleton height={40} className="mb-3" />
@@ -42,7 +47,7 @@ const SignInModal = (props) => {
                             <Skeleton height={40} />
                         </div>
                     )}
-                    {modalType === 'signup' && <SignUpForm />}
+                    {modalType === 'signup' && <RegisterForm setModalType={setModalType} />}
                 </Modal.Body>
                 <Modal.Footer>
                     {modalType === 'loading' ?
@@ -54,7 +59,7 @@ const SignInModal = (props) => {
                                 onClick={() => { handleChange() }}
                             >Đăng {modalType === 'signup' ? 'nhập' : 'ký'}</strong></>}
                 </Modal.Footer>
-            </Modal>
+            </Modal>}
         </>
     );
 }
