@@ -28,8 +28,8 @@ const Footer = () => {
                     <h6 className="fw-bold">Thông tin</h6>
                     <ul className="list-unstyled">
                         <li><Link to="/" className="text-decoration-none text-dark">Giới thiệu</Link></li>
-                        <li><Link to="/" className="text-decoration-none text-dark">Blog</Link></li>
-                        <li><Link to="/" className="text-decoration-none text-dark">Câu hỏi thường gặp</Link></li>
+                        <li><Link to="/contact" className="text-decoration-none text-dark">Hỗ trợ</Link></li>
+                        <li><Link to="/faqs" className="text-decoration-none text-dark">Câu hỏi thường gặp</Link></li>
                     </ul>
                 </Col>
 
@@ -55,6 +55,10 @@ const Footer = () => {
                         <li><img alt="ios" src="https://ant-files-v1-staging.s3.ap-southeast-1.amazonaws.com/doannh/logo_ios.png" /></li>
                     </ul>
                 </Col>
+            </Row>
+            <Row>
+                <h6 className="fw-bold">CÔNG TY TNHH GIÁO DỤC VÀ ĐÀO TẠO TALKABLE</h6>
+                <p className='mb-0'>Trụ sở chính: 64 Nguyễn Trường Tộ, P. Tân Thành, Q. Tân Phú, TP Hồ Chí Minh, Việt Nam</p>
             </Row>
             <hr />
             <p className="text-center text-muted">© {new Date().getFullYear()} talkable. All rights reserved.</p>

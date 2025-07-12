@@ -28,7 +28,7 @@ const App = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light"
+        theme="colored"
         transition={Bounce}
       />
     </div>
