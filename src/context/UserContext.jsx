@@ -32,11 +32,19 @@ export const UserProvider = ({ children }) => {
         localStorage.setItem("users", JSON.stringify(updatedUsers));
     };
 
+    const updateUserToList = (newUser) => {
+        let newList = users.filter(u => u.id !== newUser.id)
+        newList.push(newUser);
+        setUsers(newList);
+        localStorage.setItem("users", JSON.stringify(newList));
+    };
+
     const setFavoriteTeacher = (teacherId) => {
         let updatedUser = { ...user };
         updatedUser.likedTeachers.push(teacherId);
         setUser(updatedUser);
         localStorage.setItem("currentUser", JSON.stringify(updatedUser));
+        updateUserToList(updatedUser);
     }
 
     const setFavoriteBook = (bookId) => {
@@ -44,20 +52,23 @@ export const UserProvider = ({ children }) => {
         updatedUser.likedBooks.push(bookId);
         setUser(updatedUser);
         localStorage.setItem("currentUser", JSON.stringify(updatedUser));
+        updateUserToList(updatedUser);
     }
 
     const removeFavoriteBook = (bookId) => {
         let updatedUser = { ...user };
-        updatedUser.likedBooks = user.likedBooks.filter(book => book.id !== bookId);
+        updatedUser.likedBooks = user.likedBooks.filter(b => b !== bookId);
         setUser(updatedUser);
         localStorage.setItem("currentUser", JSON.stringify(updatedUser));
+        updateUserToList(updatedUser);
     }
 
     const removeFavoriteTeacher = (teacherId) => {
         let updatedUser = { ...user };
-        updatedUser.likedTeachers = user.likedTeachers.filter(teacher => teacher.id !== teacherId);
+        updatedUser.likedTeachers = user.likedTeachers.filter(t => t !== teacherId);
         setUser(updatedUser);
         localStorage.setItem("currentUser", JSON.stringify(updatedUser));
+        updateUserToList(updatedUser);
     }
 
     return (

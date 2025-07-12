@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from 'react';
 import { Card, Button } from "react-bootstrap";
 import { FaStar, FaHeart } from "react-icons/fa";
+import { toast } from 'react-toastify';
+import { ModalContext } from '../../context/ModalContext';
+import { UserContext } from '../../context/UserContext';
 
 const BookCard = ({ book }) => {
     const { title, coverImage, price, rating } = book;
+    const { user, setFavoriteBook, removeFavoriteBook } = useContext(UserContext);
+    const { setShow, setType } = useContext(ModalContext);
 
     return (
         <Card className="h-100 shadow-sm">
@@ -30,9 +35,12 @@ const BookCard = ({ book }) => {
 
                 <div className="d-flex justify-content-between align-items-center flex-wrap gap-2">
                     <h6 className="text-main mt-auto mb-0">USD {price.toFixed(2)}</h6>
-                    <Button variant="outline-primary" className='rounded-pill '>
+                    {user && user.likedBooks.includes(book.id) ? <Button variant={"primary"} className='rounded-pill' onClick={() => { removeFavoriteBook(book.id); toast.success('Đã xóa khỏi danh sách yêu thích') }}>
                         <FaHeart />
-                    </Button>
+                    </Button> :
+                        <Button variant={"outline-primary"} className='rounded-pill' onClick={user ? () => { setFavoriteBook(book.id); toast.success('Đã thêm vào danh sách yêu thích') } : () => { setType('login'); setShow(true); }}>
+                            <FaHeart />
+                        </Button>}
                 </div>
             </Card.Body>
         </Card>

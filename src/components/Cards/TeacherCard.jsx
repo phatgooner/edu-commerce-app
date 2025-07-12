@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Card, Button, Col, Row, Badge } from 'react-bootstrap';
 import { FaStar, FaHeart } from 'react-icons/fa';
 import { toast } from 'react-toastify';
+import { ModalContext } from '../../context/ModalContext';
+import { UserContext } from '../../context/UserContext';
 
 const TeacherCard = ({ teacher }) => {
-    const [isLiked, setLiked] = useState(false)
+    const { user, setFavoriteTeacher, removeFavoriteTeacher } = useContext(UserContext);
+    const { setShow, setType } = useContext(ModalContext);
 
-    const handleSetLiked = () => {
-        isLiked ? toast.success('Đã xóa khỏi danh sách yêu thích') : toast.success('Đã thêm vào danh sách yêu thích')
-        setLiked(!isLiked);
-    }
     return (
         <Card className="shadow-sm rounded-4 overflow-hidden my-4">
             <Row className="g-0 align-items-center card-content">
@@ -54,12 +53,15 @@ const TeacherCard = ({ teacher }) => {
                         </div>
                         <div className="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-2">
                             <div>
-                                <span className="fw-bold fs-5">USD {teacher.price.toFixed(2)}</span>{' '}
+                                <span className="fw-bold fs-5">USD {teacher.price.toFixed(2)}</span>
                             </div>
                             <div className="d-flex gap-2">
-                                <Button variant={isLiked ? "primary" : "outline-primary"} className='rounded-pill' onClick={() => handleSetLiked()}>
+                                {user && user.likedTeachers.includes(teacher.id) ? <Button variant={"primary"} className='rounded-pill' onClick={() => { removeFavoriteTeacher(teacher.id); toast.success('Đã xóa khỏi danh sách yêu thích') }}>
                                     <FaHeart />
-                                </Button>
+                                </Button> :
+                                    <Button variant={"outline-primary"} className='rounded-pill' onClick={user ? () => { setFavoriteTeacher(teacher.id); toast.success('Đã thêm vào danh sách yêu thích') } : () => { setType('login'); setShow(true); }}>
+                                        <FaHeart />
+                                    </Button>}
                                 <Button variant="primary">Đăng ký học</Button>
                             </div>
                         </div>
