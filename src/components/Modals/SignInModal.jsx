@@ -1,6 +1,6 @@
 import Modal from 'react-bootstrap/Modal';
-import LoginForm from './LoginForm';
-import RegisterForm from './RegisterForm';
+import LoginForm from '../Forms/LoginForm';
+import RegisterForm from '../Forms/RegisterForm';
 import { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';

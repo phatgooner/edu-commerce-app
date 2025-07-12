@@ -12,6 +12,13 @@
   text-align: justify;
 }
 
+.form-control {
+  &:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 4px 8px rgba(0, 191, 255, 0.25) !important;
+  }
+}
+
 .btn {
   &.btn-primary {
     background-color: var(--primary) !important;
@@ -140,7 +147,7 @@ body {
 
   .swiper-button-prev,
   .swiper-button-next {
-    background-color: var(--light);
+    background-color: transparent;
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -212,6 +219,13 @@ body {
 }
 
 .contact-form {
+  .container {
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
   textarea {
     resize: none;
   }

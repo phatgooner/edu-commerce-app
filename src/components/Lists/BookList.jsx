@@ -1,10 +1,10 @@
 import React from "react";
-import BookCard from "./BookCard";
+import BookCard from "../Cards/BookCard";
 import ReactPaginate from 'react-paginate';
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import SearchBar from "../SearchBar";
-import SortBar from "../SortBar";
+import SearchBar from "../Tools/SearchBar";
+import SortBar from "../Tools/SortBar";
 import arraySort from "../../helpers/arraySort";
 
 const BookList = ({ libraryData }) => {

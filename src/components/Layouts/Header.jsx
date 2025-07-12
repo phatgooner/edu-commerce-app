@@ -1,12 +1,12 @@
 import Container from 'react-bootstrap/Container';
-import logo from '../assets/transparent-logo.png'
+import logo from '../../assets/transparent-logo.png'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavDropdown } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
-import { UserContext } from '../context/UserContext';
-import { ModalContext } from '../context/ModalContext';
+import { UserContext } from '../../context/UserContext';
+import { ModalContext } from '../../context/ModalContext';
 import { toast } from 'react-toastify';
 
 const Header = () => {

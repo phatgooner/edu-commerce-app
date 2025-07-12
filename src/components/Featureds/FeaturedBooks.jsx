@@ -1,4 +1,4 @@
-import BookCard from "./BookCard";
+import BookCard from "../Cards/BookCard";
 import { Container, Row, Col } from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
 import arraySort from '../../helpers/arraySort';

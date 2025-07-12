@@ -1,4 +1,4 @@
-import BookList from "../components/Library/BookList";
+import BookList from "../components/Lists/BookList";
 import libraryData from "../data/library";
 
 const Library = () => {

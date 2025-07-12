@@ -1,6 +1,6 @@
 import { createContext, useState, useContext } from "react";
 import { UserContext } from "./UserContext";
-import SignInModal from "../components/SignIn/SignInModal";
+import SignInModal from "../components/Modals/SignInModal";
 
 export const ModalContext = createContext();
 export const ModalProvider = ({ children }) => {

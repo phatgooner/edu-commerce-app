@@ -1,12 +1,12 @@
-import Banner from "../components/Banner";
+import Banner from "../components/Layouts/Banner";
 import teachersData from '../data/teachers';
 import library from '../data/library';
 import reviews from '../data/reviews';
 import faqs from "../data/faqs";
-import FeaturedTeachers from "../components/Teachers/FeaturedTeachers";
-import ReviewCarousel from '../components/ReviewCarousel';
-import FeaturedBooks from "../components/Library/FeaturedBooks";
-import FeaturedFaqs from "../components/FAQs/FeaturedFaqs";
+import FeaturedTeachers from "../components/Featureds/FeaturedTeachers";
+import ReviewCarousel from '../components/Carousels/ReviewCarousel';
+import FeaturedBooks from "../components/Featureds/FeaturedBooks";
+import FeaturedFaqs from "../components/Featureds/FeaturedFaqs";
 
 const Homepage = () => {
     return (

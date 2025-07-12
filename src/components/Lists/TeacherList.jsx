@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ReactPaginate from 'react-paginate';
-import TeacherCard from './TeacherCard';
-import SearchBar from '../SearchBar';
-import SortBar from '../SortBar';
+import TeacherCard from '../Cards/TeacherCard';
+import SearchBar from '../Tools/SearchBar';
+import SortBar from '../Tools/SortBar';
 import arraySort from '../../helpers/arraySort';
 
 const TeacherList = ({ teachers }) => {

@@ -1,6 +1,6 @@
 import { Container } from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
-import FaqList from './FaqList';
+import FaqList from '../Lists/FaqList';
 
 const FeaturedFaqs = ({ faqsData }) => {
     const faqs = faqsData.slice(0, 5);

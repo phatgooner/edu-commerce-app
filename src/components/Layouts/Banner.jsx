@@ -1,12 +1,16 @@
 import React from 'react';
-import bannerImg from '../assets/banner.png';
+import bannerImg from '../../assets/banner.png';
 import { BsChatRightDotsFill } from 'react-icons/bs';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import { ModalContext } from '../context/ModalContext';
+import { ModalContext } from '../../context/ModalContext';
+import { UserContext } from '../../context/UserContext';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Banner = () => {
-    const { setType, setShow } = useContext(ModalContext)
+    const { setType, setShow } = useContext(ModalContext);
+    const { user } = useContext(UserContext);
+    const navigate = useNavigate();
 
     return (
         <Container>
@@ -26,7 +30,7 @@ const Banner = () => {
                             <BsChatRightDotsFill className='text-main' /> Kết nối với cộng đồng toàn cầu của những người học ngôn ngữ
                         </li>
                     </ul>
-                    <Button variant="primary" size="lg" onClick={() => { setType('signup'); setShow(true); }}>
+                    <Button variant="primary" size="lg" onClick={user ? () => navigate('/teachers') : () => { setType('signup'); setShow(true); }}>
                         Bắt đầu bây giờ
                     </Button>
                 </Col>

@@ -1,4 +1,4 @@
-import TeacherList from '../components/Teachers/TeacherList'
+import TeacherList from '../components/Lists/TeacherList'
 import teachersData from '../data/teachers';
 
 const Teachers = () => {

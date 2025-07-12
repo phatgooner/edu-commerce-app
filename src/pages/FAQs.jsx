@@ -1,4 +1,4 @@
-import FaqList from "../components/FAQs/FaqList";
+import FaqList from "../components/Lists/FaqList";
 import faqs from '../data/faqs';
 
 const FAQs = () => {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import logo from '../assets/transparent-logo.png'
+import logo from '../../assets/transparent-logo.png'
 
 const LoadingScreen = () => {
     const [isLoading, setLoading] = useState(true)

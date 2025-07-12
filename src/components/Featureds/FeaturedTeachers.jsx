@@ -1,4 +1,4 @@
-import TeacherCard from "./TeacherCard";
+import TeacherCard from "../Cards/TeacherCard";
 import { Container, Row, Col } from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
 
