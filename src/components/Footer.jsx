@@ -40,9 +40,9 @@ const Footer = () => {
                         <li><Link className="text-decoration-none text-dark" to="mailto:support@talkable.io">Email: support@talkable.io</Link></li>
                         <li><Link className="text-decoration-none text-dark" to="tel:19006868">Hotline: 1900 6868</Link></li>
                         <li className="d-flex gap-3">
-                            <Link to="/"><i className="bi bi-facebook fs-4 text-primary"></i></Link>
-                            <Link to="/"><i className="bi bi-youtube fs-4 text-danger"></i></Link>
-                            <Link to="/"><i className="bi bi-instagram fs-4 text-warning"></i></Link>
+                            <Link to="https://www.facebook.com/" target='blank'><i className="bi bi-facebook fs-4 text-primary"></i></Link>
+                            <Link to="https://www.youtube.com/" target='blank'><i className="bi bi-youtube fs-4 text-danger"></i></Link>
+                            <Link to="https://www.instagram.com/" target='blank'><i className="bi bi-instagram fs-4 text-warning"></i></Link>
                         </li>
                     </ul>
                 </Col>

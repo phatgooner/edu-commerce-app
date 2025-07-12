@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { toast } from "react-toastify";
+import { Link } from 'react-router-dom';
 
 const ContactForm = () => {
     const [contactForm, setContactForm] = useState({
@@ -81,7 +82,7 @@ const ContactForm = () => {
                         </div>
 
                         <Button variant="primary" type="submit" className="w-100" disabled={isSending ? true : false}>
-                            Gửi
+                            Gửi yêu cầu
                         </Button>
                     </Form>
                 </Col>
@@ -98,9 +99,9 @@ const ContactForm = () => {
                         </p>
 
                         <div className="d-flex gap-3 fs-5">
-                            <i className="bi bi-facebook fs-4 text-primary"></i>
-                            <i className="bi bi-youtube fs-4 text-danger"></i>
-                            <i className="bi bi-instagram fs-4 text-warning"></i>
+                            <Link to="https://www.facebook.com/" target='blank'><i className="bi bi-facebook fs-4 text-primary"></i></Link>
+                            <Link to="https://www.youtube.com/" target='blank'><i className="bi bi-youtube fs-4 text-danger"></i></Link>
+                            <Link to="https://www.instagram.com/" target='blank'><i className="bi bi-instagram fs-4 text-warning"></i></Link>
                         </div>
                     </div>
                 </Col>
