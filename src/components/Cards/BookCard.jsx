@@ -24,12 +24,12 @@ const BookCard = ({ book }) => {
                 variant="top"
                 src={coverImage}
                 alt={title}
-                style={{ height: "240px", objectFit: "cover" }}
+                style={{ height: "240px", objectFit: "cover", cursor: "pointer" }}
                 onClick={() => setShowModal(true)}
             />
-            <Card.Body className="d-flex flex-column justify-content-between card-content" onClick={() => setShowModal(true)}>
-                <Card.Title className="fs-6 fw-bold">{title}</Card.Title>
-                <div className="d-flex align-items-center">
+            <Card.Body className="d-flex flex-column justify-content-between card-content">
+                <Card.Title role='button' className="fs-6 fw-bold" onClick={() => setShowModal(true)}>{title}</Card.Title>
+                <div role='button' className="d-flex align-items-center" onClick={() => setShowModal(true)}>
                     <span className="text-warning mb-1">
                         {[...Array(5)].map((_, i) => (
                             <FaStar

@@ -19,8 +19,8 @@ const TeacherCard = ({ teacher }) => {
                 teacher={teacher}
             />
 
-            <Row className="g-0 align-items-center card-content" onClick={() => setShowModal(true)}>
-                <Col md={3} lg={2} className="position-relative text-center">
+            <Row className="g-0 align-items-center card-content">
+                <Col md={3} lg={2} className="position-relative text-center" role='button' onClick={() => setShowModal(true)}>
                     <img
                         src={teacher.avatar}
                         alt={teacher.name}
@@ -31,7 +31,7 @@ const TeacherCard = ({ teacher }) => {
 
                 <Col md={9} lg={10}>
                     <Card.Body>
-                        <div className="d-flex justify-content-between align-items-start">
+                        <div role='button' className="d-flex justify-content-between align-items-start" onClick={() => setShowModal(true)}>
                             <div>
                                 <h5 className="fw-bold mb-1">{teacher.name}
                                     <span className="text-warning fw-bold"><FaStar className='ms-2 mb-1' /> {teacher.rating.toFixed(1)}</span></h5>
@@ -55,8 +55,8 @@ const TeacherCard = ({ teacher }) => {
                                     <span className="text-muted">{teacher.bio}</span>
                                 </div>
                             </div>
-                            <Button variant="primary" className="rounded-pill" onClick={() => setShowModal(true)}>
-                                Xem chi tiết
+                            <Button variant="primary" className="rounded-pill">
+                                Chi tiết
                             </Button>
                         </div>
                         <div className="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-2">
