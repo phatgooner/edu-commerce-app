@@ -1,24 +1,33 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Card, Button } from "react-bootstrap";
 import { FaStar, FaHeart } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import { ModalContext } from '../../context/ModalContext';
 import { UserContext } from '../../context/UserContext';
+import BookModal from '../Modals/BookModal';
 
 const BookCard = ({ book }) => {
     const { title, coverImage, price, rating } = book;
     const { user, setFavoriteBook, removeFavoriteBook } = useContext(UserContext);
     const { setShow, setType } = useContext(ModalContext);
+    const [showModal, setShowModal] = useState(false);
 
     return (
         <Card className="h-100 shadow-sm">
+            <BookModal
+                show={showModal}
+                handleClose={() => setShowModal(false)}
+                book={book}
+            />
+
             <Card.Img
                 variant="top"
                 src={coverImage}
                 alt={title}
                 style={{ height: "240px", objectFit: "cover" }}
+                onClick={() => setShowModal(true)}
             />
-            <Card.Body className="d-flex flex-column justify-content-between card-content">
+            <Card.Body className="d-flex flex-column justify-content-between card-content" onClick={() => setShowModal(true)}>
                 <Card.Title className="fs-6 fw-bold">{title}</Card.Title>
                 <div className="d-flex align-items-center">
                     <span className="text-warning mb-1">

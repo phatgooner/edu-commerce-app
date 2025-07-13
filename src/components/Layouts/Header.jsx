@@ -33,7 +33,7 @@ const Header = () => {
                         </Nav>
                         {!user ?
                             <Nav className='d-flex gap-2'>
-                                <button className='btn btn-outline-primary' onClick={() => { setType('login'); setShow(true); }}>Đăng nhập</button>
+                                <button className='btn btn-outline-info' onClick={() => { setType('login'); setShow(true); }}>Đăng nhập</button>
                                 <button className='btn btn-primary' onClick={() => { setType('signup'); setShow(true); }}>Đăng ký</button>
                             </Nav> :
                             <NavDropdown title={`Xin chào, ${user.name}`} id="basic-nav-dropdown">

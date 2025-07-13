@@ -1,17 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Card, Button, Col, Row, Badge } from 'react-bootstrap';
 import { FaStar, FaHeart } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import { ModalContext } from '../../context/ModalContext';
 import { UserContext } from '../../context/UserContext';
+import TeacherModal from '../Modals/TeacherModal';
 
 const TeacherCard = ({ teacher }) => {
     const { user, setFavoriteTeacher, removeFavoriteTeacher } = useContext(UserContext);
     const { setShow, setType } = useContext(ModalContext);
+    const [showModal, setShowModal] = useState(false)
 
     return (
         <Card className="shadow-sm rounded-4 overflow-hidden my-4">
-            <Row className="g-0 align-items-center card-content">
+            <TeacherModal
+                show={showModal}
+                handleClose={() => setShowModal(false)}
+                teacher={teacher}
+            />
+
+            <Row className="g-0 align-items-center card-content" onClick={() => setShowModal(true)}>
                 <Col md={3} lg={2} className="position-relative text-center">
                     <img
                         src={teacher.avatar}
@@ -47,7 +55,7 @@ const TeacherCard = ({ teacher }) => {
                                     <span className="text-muted">{teacher.bio}</span>
                                 </div>
                             </div>
-                            <Button variant="primary" className="rounded-pill">
+                            <Button variant="primary" className="rounded-pill" onClick={() => setShowModal(true)}>
                                 Xem chi tiết
                             </Button>
                         </div>
@@ -62,7 +70,8 @@ const TeacherCard = ({ teacher }) => {
                                     <Button variant={"outline-primary"} className='rounded-pill' onClick={user ? () => { setFavoriteTeacher(teacher.id); toast.success('Đã thêm vào danh sách yêu thích') } : () => { setType('login'); setShow(true); }}>
                                         <FaHeart />
                                     </Button>}
-                                <Button variant="primary">Đăng ký học</Button>
+                                <Button variant="primary"
+                                    onClick={user ? () => { toast.success('Đăng ký học thành công! Giáo viên sẽ liên hệ lại bạn để xác nhận.') } : () => { setType('login'); setShow(true); }}>Đăng ký học</Button>
                             </div>
                         </div>
                     </Card.Body>
