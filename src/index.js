@@ -10,7 +10,10 @@ import Homepage from './pages/Homepage';
 import ContactUs from './pages/ContactUs';
 import Error from './pages/Error';
 import FAQs from './pages/FAQs';
+import LikedBooks from './pages/LikedBooks';
+import LikedTeachers from './pages/LikedTeachers';
 import ScrollToTop from './components/Tools/ScrollToTop';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,6 +28,8 @@ root.render(
           <Route path="/teachers" element={<Teachers />} />
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/liked-teachers" element={<LikedTeachers />} />
+          <Route path="/liked-books" element={<LikedBooks />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>

@@ -22,7 +22,7 @@ export const UserProvider = ({ children }) => {
         setUser(null);
         localStorage.removeItem("currentUser");
         setTimeout(() => {
-            window.location.reload();
+            window.location.href = '/';
         }, 500)
     };
 

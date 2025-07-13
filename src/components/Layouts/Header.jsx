@@ -3,7 +3,7 @@ import logo from '../../assets/transparent-logo.png'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavDropdown } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
 import { ModalContext } from '../../context/ModalContext';
@@ -37,15 +37,15 @@ const Header = () => {
                                 <button className='btn btn-primary' onClick={() => { setType('signup'); setShow(true); }}>Đăng ký</button>
                             </Nav> :
                             <NavDropdown title={`Xin chào, ${user.name}`} id="basic-nav-dropdown">
-                                <NavDropdown.Item>
-                                    <span>Giáo viên yêu thích</span>
+                                <NavDropdown.Item as={Link} to='/liked-teachers'>
+                                    Giáo viên yêu thích
                                 </NavDropdown.Item>
-                                <NavDropdown.Item>
-                                    <span>Sách yêu thích</span>
+                                <NavDropdown.Item as={Link} to='/liked-books'>
+                                    Sách yêu thích
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item>
-                                    <span onClick={() => { logout(); toast.success('Đăng xuất thành công') }}>Đăng xuất</span>
+                                <NavDropdown.Item onClick={() => { logout(); toast.success('Đăng xuất thành công') }}>
+                                    Đăng xuất
                                 </NavDropdown.Item>
                             </NavDropdown>
                         }

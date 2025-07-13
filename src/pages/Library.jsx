@@ -8,7 +8,7 @@ const Library = () => {
                 <h1 className="fw-bold mb-4" style={{ fontSize: '3rem' }}>
                     Tìm giáo trình học ngoại ngữ tốt nhất cho bạn
                 </h1>
-                <p class="leading-5 text-gray3 mb-0 mt-1 fs-5">Lựa chọn từ những tác giả hàng đầu để có được trải nghiệm học tốt nhất.</p>
+                <p class="mb-0 mt-1 fs-5">Lựa chọn từ những tác giả hàng đầu để có được trải nghiệm học tốt nhất.</p>
             </div>
             <div className="book-list bg-light">
                 <BookList libraryData={libraryData} />

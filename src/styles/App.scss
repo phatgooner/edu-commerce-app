@@ -4,6 +4,52 @@
   --light: rgb(248, 249, 250);
 }
 
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  .header-container {
+    font-weight: bold;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    .navbar {
+      z-index: 10;
+      background-color: white !important;
+      padding: 20px;
+
+      .nav-link {
+        color: var(--secondary);
+
+        &.active {
+          color: var(--primary);
+        }
+      }
+
+      .dropdown-item {
+        &:active {
+          background-color: var(--primary);
+        }
+      }
+    }
+  }
+
+  .footer-container {
+    background-color: white;
+    padding-top: 2rem;
+    border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
+  }
+}
+
 .text-main {
   color: var(--primary) !important;
 }
@@ -102,52 +148,13 @@
   }
 }
 
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.app-container {
-  .header-container {
-    font-weight: bold;
-    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-
-    .navbar {
-      z-index: 10;
-      background-color: white !important;
-      padding: 20px;
-
-      .nav-link {
-        color: var(--secondary);
-
-        &.active {
-          color: var(--primary);
-        }
-      }
-    }
-  }
-
-  .footer-container {
-    background-color: white;
-    padding-top: 2rem;
-    border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
-  }
-}
-
 .review-swiper {
   margin: 0 auto !important;
 
   .swiper-button-prev,
   .swiper-button-next {
     background-color: transparent;
+    margin: -50px 0;
     width: 80px;
     height: 80px;
     border-radius: 50%;

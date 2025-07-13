@@ -16,7 +16,7 @@ const BookList = ({ libraryData }) => {
         price: '',
     });
     let languageList = [];
-    libraryData.forEach(book => {
+    libraryData && libraryData.length > 0 && libraryData.forEach(book => {
         !languageList.includes(book.language) && languageList.push(book.language);
     })
 
@@ -71,11 +71,11 @@ const BookList = ({ libraryData }) => {
 
             {/* List */}
             <Row>
-                {currentItems.map(book => (
+                {currentItems && currentItems.length > 0 ? currentItems.map(book => (
                     <Col className="my-4" key={book.id} md={3} lg={2} sm={12}>
                         <BookCard book={book} />
                     </Col>
-                ))}
+                )) : <p class="text-center my-5 fs-5">Không tìm thấy sản phẩm nào trong danh sách.</p>}
             </Row>
 
             {/* Pagination component */}

@@ -15,7 +15,7 @@ const TeacherList = ({ teachers }) => {
         price: '',
     });
     let languageList = [];
-    teachers.forEach(teacher => {
+    teachers && teachers.length > 0 && teachers.forEach(teacher => {
         teacher.languages.forEach(language => {
             !languageList.includes(language) && languageList.push(language);
         })
@@ -72,11 +72,11 @@ const TeacherList = ({ teachers }) => {
 
             {/* List */}
             <Row>
-                {currentItems.map((teacher) => (
+                {currentItems && currentItems.length > 0 ? currentItems.map((teacher) => (
                     <Col key={teacher.id} md={12} lg={12}>
                         <TeacherCard teacher={teacher} />
                     </Col>
-                ))}
+                )) : <p class="text-center my-5 fs-5">Không tìm thấy giáo viên nào trong danh sách.</p>}
             </Row>
 
             {/* Pagination component */}

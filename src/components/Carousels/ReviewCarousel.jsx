@@ -40,7 +40,7 @@ const ReviewCarousel = ({ reviews }) => {
                                             />
                                         ))}
                                     </div>
-                                    <p className="text-secondary mb-0" style={{ fontSize: '0.95rem' }}>
+                                    <p className="text-secondary mb-0 text-justify" style={{ fontSize: '0.95rem' }}>
                                         {r.content}
                                     </p>
                                 </div>
