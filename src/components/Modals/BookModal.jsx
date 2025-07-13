@@ -41,7 +41,7 @@ const BookModal = ({ show, handleClose, book }) => {
 
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>Đóng</Button>
-                <Button variant="primary" onClick={user ? () => { toast.success('Đăng ký mua sách thành công'); handleClose(true) } : () => { setShow(true); setType('login') }}>Đăng ký mua sách</Button>
+                <Button variant="primary" onClick={user ? () => { toast.success('Đăng ký mua sách thành công'); handleClose(true) } : () => { handleClose(true); setShow(true); setType('login') }}>Đăng ký mua sách</Button>
             </Modal.Footer>
         </Modal>
     );

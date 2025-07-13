@@ -7,6 +7,7 @@ import FeaturedTeachers from "../components/Featureds/FeaturedTeachers";
 import ReviewCarousel from '../components/Carousels/ReviewCarousel';
 import FeaturedBooks from "../components/Featureds/FeaturedBooks";
 import FeaturedFaqs from "../components/Featureds/FeaturedFaqs";
+import FeaturedPartners from "../components/Featureds/FeadturedPartners";
 
 const Homepage = () => {
     return (
@@ -24,6 +25,9 @@ const Homepage = () => {
                 <FeaturedBooks library={library} />
             </div>
             <div className="reviews-content bg-white py-5">
+                <FeaturedPartners faqsData={faqs} />
+            </div>
+            <div className="reviews-content bg-light py-5">
                 <FeaturedFaqs faqsData={faqs} />
             </div>
         </div>

@@ -108,7 +108,7 @@ const TeacherModal = ({ show, handleClose, teacher }) => {
                 <Button variant="secondary" onClick={handleClose}>
                     Đóng
                 </Button>
-                <Button variant="primary" onClick={user ? () => { toast.success('Đăng ký học thành công! Giáo viên sẽ liên hệ lại bạn để xác nhận.'); handleClose(true) } : () => { setShow(true); setType('login') }}>Đăng ký học</Button>
+                <Button variant="primary" onClick={user ? () => { toast.success('Đăng ký học thành công! Giáo viên sẽ liên hệ lại bạn để xác nhận.'); handleClose(true) } : () => { handleClose(true); setShow(true); setType('login') }}>Đăng ký học</Button>
             </Modal.Footer>
         </Modal>
     );

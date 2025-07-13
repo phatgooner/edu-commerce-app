@@ -31,6 +31,7 @@ const LoginForm = ({ handleShowModal }) => {
 
     return (
         <Form className="p-4" onSubmit={(e) => handleLogin(e)}>
+            <h5 className='mb-4 text-main text-center'>Đăng nhập ngay để trải nghiệm tốt nhất!</h5>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <FormControl type="email" placeholder="Email" required onChange={(e) => setEmail(e.target.value)} />
             </Form.Group>

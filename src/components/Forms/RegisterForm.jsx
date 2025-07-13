@@ -69,6 +69,7 @@ const RegisterForm = ({ setModalType }) => {
 
     return (
         <Form className="p-4" onSubmit={(e) => handleRegister(e)}>
+            <h5 className='mb-4 text-main text-center'>Đăng ký ngay để tham gia cùng talkable!</h5>
             <Form.Group className="mb-3" controlId="formName">
                 <FormControl name="name" type="text" value={registerForm.name} placeholder="Họ Tên" required onChange={(e) => handleChange(e)} />
             </Form.Group>
