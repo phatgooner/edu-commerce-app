@@ -18,8 +18,8 @@ const Footer = () => {
                     <h6 className="fw-bold">Tính năng</h6>
                     <ul className="list-unstyled">
                         <li><Link to="/teachers" className="text-decoration-none text-dark">Tìm giáo viên</Link></li>
-                        <li><Link to="/library" className="text-decoration-none text-dark">Thư viện sách</Link></li>
-                        <li><Link to="/" className="text-decoration-none text-dark">Danh sách yêu thích</Link></li>
+                        <li><Link to="/liked-teachers" className="text-decoration-none text-dark">Giáo viên yêu thích</Link></li>
+                        <li><Link to="/liked-books" className="text-decoration-none text-dark">Sản phẩm yêu thích</Link></li>
                     </ul>
                 </Col>
 
@@ -27,7 +27,7 @@ const Footer = () => {
                 <Col md={2} className="mb-4">
                     <h6 className="fw-bold">Thông tin</h6>
                     <ul className="list-unstyled">
-                        <li><Link to="/" className="text-decoration-none text-dark">Giới thiệu</Link></li>
+                        <li><Link to="/library" className="text-decoration-none text-dark">Thư viện sách</Link></li>
                         <li><Link to="/contact" className="text-decoration-none text-dark">Hỗ trợ</Link></li>
                         <li><Link to="/faqs" className="text-decoration-none text-dark">Câu hỏi thường gặp</Link></li>
                     </ul>

@@ -44,7 +44,7 @@ const BookCard = ({ book }) => {
 
                 <div className="d-flex justify-content-between align-items-center flex-wrap gap-2">
                     <h6 className="text-main mt-auto mb-0">USD {price.toFixed(2)}</h6>
-                    {user && user.likedBooks.includes(book.id) ? <Button variant={"primary"} className='rounded-pill' onClick={() => { removeFavoriteBook(book.id); toast.success('Đã xóa khỏi danh sách yêu thích') }}>
+                    {user && user.likedBooks.includes(book.id) ? <Button variant={"danger"} className='rounded-pill' onClick={() => { removeFavoriteBook(book.id); toast.success('Đã xóa khỏi danh sách yêu thích') }}>
                         <FaHeart />
                     </Button> :
                         <Button variant={"outline-primary"} className='rounded-pill' onClick={user ? () => { setFavoriteBook(book.id); toast.success('Đã thêm vào danh sách yêu thích') } : () => { setType('login'); setShow(true); }}>

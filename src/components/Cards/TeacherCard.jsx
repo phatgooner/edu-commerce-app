@@ -32,7 +32,7 @@ const TeacherCard = ({ teacher }) => {
                 <Col md={9} lg={10}>
                     <Card.Body>
                         <div role='button' className="d-flex justify-content-between align-items-start" onClick={() => setShowModal(true)}>
-                            <div>
+                            <div className='w-75'>
                                 <h5 className="fw-bold mb-1">{teacher.name}
                                     <span className="text-warning fw-bold"><FaStar className='ms-2 mb-1' /> {teacher.rating.toFixed(1)}</span></h5>
                                 <div className="mb-2">
@@ -64,7 +64,7 @@ const TeacherCard = ({ teacher }) => {
                                 <span className="fw-bold fs-5">USD {teacher.price.toFixed(2)}</span>
                             </div>
                             <div className="d-flex gap-2">
-                                {user && user.likedTeachers.includes(teacher.id) ? <Button variant={"primary"} className='rounded-pill' onClick={() => { removeFavoriteTeacher(teacher.id); toast.success('Đã xóa khỏi danh sách yêu thích') }}>
+                                {user && user.likedTeachers.includes(teacher.id) ? <Button variant={"danger"} className='rounded-pill' onClick={() => { removeFavoriteTeacher(teacher.id); toast.success('Đã xóa khỏi danh sách yêu thích') }}>
                                     <FaHeart />
                                 </Button> :
                                     <Button variant={"outline-primary"} className='rounded-pill' onClick={user ? () => { setFavoriteTeacher(teacher.id); toast.success('Đã thêm vào danh sách yêu thích') } : () => { setType('login'); setShow(true); }}>

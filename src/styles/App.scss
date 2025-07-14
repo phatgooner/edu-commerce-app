@@ -58,10 +58,31 @@ body {
   text-align: justify;
 }
 
-.form-control {
-  &:focus {
-    border-color: var(--primary) !important;
-    box-shadow: 0 4px 8px rgba(0, 191, 255, 0.25) !important;
+form {
+  .form-control {
+    &:focus {
+      border-color: var(--primary) !important;
+      box-shadow: 0 4px 8px rgba(0, 191, 255, 0.25) !important;
+    }
+  }
+
+  .form-select {
+    &:focus {
+      border-color: var(--primary) !important;
+      box-shadow: 0 4px 8px rgba(0, 191, 255, 0.25) !important;
+    }
+  }
+
+  .form-check-input {
+    &:focus {
+      border-color: var(--primary) !important;
+      box-shadow: 0 0 0 .25px rgba(0, 191, 255, 0.25) !important;
+    }
+
+    &:checked {
+      background-color: var(--primary) !important;
+      border-color: var(--primary) !important;
+    }
   }
 }
 
@@ -73,6 +94,14 @@ body {
 
     &:hover {
       opacity: 0.6;
+    }
+  }
+
+  &.btn-outline-info {
+    &:hover {
+      background-color: var(--primary) !important;
+      border: 1px solid var(--primary) !important;
+      color: white !important;
     }
   }
 
