@@ -6,6 +6,7 @@ import { ToastContainer, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { UserProvider } from './context/UserContext';
 import { ModalProvider } from './context/ModalContext';
+import ChatbotWidget from './chatbot/ChatbotWidget';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <div className='footer-container'>
             <Footer />
           </div>
+          <ChatbotWidget />
           <ToastContainer
             position="top-right"
             autoClose={3000}
