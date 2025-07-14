@@ -317,12 +317,17 @@ form {
           gap: 1rem;
 
           .react-chatbot-kit-chat-bot-message {
+
+            display: inline-block;
+            margin: 0;
+            width: auto;
+            max-width: 80%;
             word-wrap: break-word;
             overflow-wrap: break-word;
-            width: 80%;
             border-radius: 20px;
             background: #eeeeee;
             color: black;
+            text-align: justify;
 
             .react-chatbot-kit-chat-bot-message-arrow {
               border-right: 14px solid #eeeeee;
@@ -336,12 +341,16 @@ form {
           gap: 1rem;
 
           .react-chatbot-kit-user-chat-message {
+            display: inline-block;
+            margin: 0;
+            width: auto;
+            max-width: 80%;
             word-wrap: break-word;
             overflow-wrap: break-word;
-            width: 80%;
             border-radius: 20px;
             background: var(--primary);
             color: white;
+            text-align: justify;
 
             .react-chatbot-kit-user-chat-message-arrow {
               border-left: 14px solid var(--primary);

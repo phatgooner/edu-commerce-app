@@ -11,6 +11,12 @@ const ChatbotWidget = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleChat = () => setIsOpen((prev) => !prev);
+    const validateInput = (input) => {
+        if (!input.trim()) {
+            return false;
+        }
+        return true;
+    }
 
     return (
         <div className="chatbot-container">
@@ -26,6 +32,8 @@ const ChatbotWidget = () => {
                     config={config}
                     actionProvider={ActionProvider}
                     messageParser={MessageParser}
+                    placeholderText='Nhập nội dung tại đây...'
+                    validator={validateInput}
                 />
             </div>
         </div>

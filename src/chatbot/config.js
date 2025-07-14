@@ -14,14 +14,15 @@ const config = {
         },
     },
     customComponents: {
-        botAvatar: (props) => (
+        header: () => <div className="react-chatbot-kit-chat-header">Trò chuyện cùng Talkable Assisstant</div>,
+        botAvatar: () => (
             <img
                 src={logo}
                 alt="Bot Avatar"
                 style={{ width: 40, height: 40, borderRadius: "50%" }}
             />
         ),
-        userAvatar: (props) => (
+        userAvatar: () => (
             <img
                 src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
                 alt="User Avatar"
