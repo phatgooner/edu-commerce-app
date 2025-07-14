@@ -273,7 +273,7 @@ form {
     bottom: 4rem;
     right: 1rem;
     padding-bottom: 0.4rem;
-    z-index: 999;
+    z-index: 1000;
     background-color: #00bfff;
     color: white;
     border: none;
@@ -291,11 +291,12 @@ form {
     right: 2rem;
     width: 350px;
     max-width: 90vw;
-    z-index: 998;
+    z-index: 999;
 
     .react-chatbot-kit-chat-header {
       background-color: var(--primary);
       color: white;
+      border-radius: 0;
     }
 
     .react-chatbot-kit-chat-message-container {
@@ -331,6 +332,7 @@ form {
     .react-chatbot-kit-chat-input {
       outline: none !important;
       box-shadow: none !important;
+      border-radius: 0;
     }
   }
 }
