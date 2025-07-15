@@ -9,10 +9,15 @@ const LoginForm = ({ handleShowModal }) => {
     const [showPass, setShowPass] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const { users, login } = useContext(UserContext);
+    const [isStayLoggedIn, setStayLoggedIn] = useState(false)
+    const { users, login, loginWithoutStayLogged } = useContext(UserContext);
 
     const handleShowPass = () => {
         setShowPass(!showPass)
+    }
+
+    const handleStayLoggedIn = () => {
+        setStayLoggedIn(!isStayLoggedIn);
     }
 
     const handleLogin = (e) => {
@@ -21,7 +26,7 @@ const LoginForm = ({ handleShowModal }) => {
             (u) => u.email === email && u.password === password
         );
         if (user) {
-            login(user);
+            isStayLoggedIn ? login(user) : loginWithoutStayLogged(user);
             toast.success("Đăng nhập thành công!");
             handleShowModal(false);
         } else {
@@ -47,10 +52,10 @@ const LoginForm = ({ handleShowModal }) => {
 
             <Row className="align-items-center mb-3">
                 <Col>
-                    <Form.Check type="checkbox" label="Duy trì đăng nhập" />
+                    <Form.Check type="checkbox" label="Duy trì đăng nhập" checked={isStayLoggedIn} onClick={() => handleStayLoggedIn()} />
                 </Col>
                 <Col className="text-end">
-                    <Link to="#" className='nav-link'>Quên mật khẩu</Link>
+                    <Link onClick={() => toast.info('Tính năng đang bảo trì, vui lòng quay lại sau.')} className='nav-link'>Quên mật khẩu</Link>
                 </Col>
             </Row>
 

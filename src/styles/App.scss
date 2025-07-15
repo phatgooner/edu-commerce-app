@@ -392,3 +392,12 @@ form {
     }
   }
 }
+
+.modal-lg {
+  max-width: 80% !important;
+
+  .modal-body {
+    max-height: 70vh !important;
+    overflow-y: auto !important;
+  }
+}

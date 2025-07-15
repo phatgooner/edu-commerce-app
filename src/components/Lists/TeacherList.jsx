@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import ReactPaginate from 'react-paginate';
-import TeacherCard from '../Cards/TeacherCard';
 import SearchBar from '../Tools/SearchBar';
 import SortBar from '../Tools/SortBar';
 import arraySort from '../../helpers/arraySort';
+import TeacherListGenerator from '../Generators/TeacherListGenerator';
 
 const TeacherList = ({ teachers }) => {
     // Filter
@@ -71,13 +71,7 @@ const TeacherList = ({ teachers }) => {
             <SortBar onSortsChange={setSortType} />
 
             {/* List */}
-            <Row>
-                {currentItems && currentItems.length > 0 ? currentItems.map((teacher) => (
-                    <Col key={teacher.id} md={12} lg={12}>
-                        <TeacherCard teacher={teacher} />
-                    </Col>
-                )) : <p class="text-center my-5 fs-5">Không tìm thấy giáo viên nào trong danh sách.</p>}
-            </Row>
+            <TeacherListGenerator teacherList={currentItems} />
 
             {/* Pagination component */}
             <ReactPaginate

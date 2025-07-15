@@ -1,7 +1,7 @@
 import React from "react";
-import BookCard from "../Cards/BookCard";
+import BookListGenerator from "../Generators/BookListGenerator";
 import ReactPaginate from 'react-paginate';
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import SearchBar from "../Tools/SearchBar";
 import SortBar from "../Tools/SortBar";
@@ -70,13 +70,7 @@ const BookList = ({ libraryData }) => {
             <SortBar onSortsChange={setSortType} />
 
             {/* List */}
-            <Row>
-                {currentItems && currentItems.length > 0 ? currentItems.map(book => (
-                    <Col className="my-4" key={book.id} md={3} lg={2} sm={12}>
-                        <BookCard book={book} />
-                    </Col>
-                )) : <p class="text-center my-5 fs-5">Không tìm thấy sản phẩm nào trong danh sách.</p>}
-            </Row>
+            <BookListGenerator bookList={currentItems} />
 
             {/* Pagination component */}
             <ReactPaginate

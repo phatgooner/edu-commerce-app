@@ -7,7 +7,7 @@ export const UserProvider = ({ children }) => {
 
     // Load dữ liệu từ localStorage
     useEffect(() => {
-        const savedUser = JSON.parse(localStorage.getItem("currentUser"));
+        const savedUser = JSON.parse(localStorage.getItem("currentUser")) || JSON.parse(sessionStorage.getItem("currentUser"));
         const savedUsers = JSON.parse(localStorage.getItem("users")) || [];
         setUser(savedUser);
         setUsers(savedUsers);
@@ -18,9 +18,15 @@ export const UserProvider = ({ children }) => {
         localStorage.setItem("currentUser", JSON.stringify(loginUser));
     };
 
+    const loginWithoutStayLogged = (loginUser) => {
+        setUser(loginUser);
+        sessionStorage.setItem("currentUser", JSON.stringify(loginUser));
+    };
+
     const logout = () => {
         setUser(null);
         localStorage.removeItem("currentUser");
+        sessionStorage.removeItem("currentUser");
         setTimeout(() => {
             window.location.href = '/';
         }, 500)
@@ -72,7 +78,7 @@ export const UserProvider = ({ children }) => {
     }
 
     return (
-        <UserContext.Provider value={{ user, users, login, logout, register, setFavoriteBook, setFavoriteTeacher, removeFavoriteBook, removeFavoriteTeacher }}>
+        <UserContext.Provider value={{ user, users, login, loginWithoutStayLogged, logout, register, setFavoriteBook, setFavoriteTeacher, removeFavoriteBook, removeFavoriteTeacher }}>
             {children}
         </UserContext.Provider>
     );
