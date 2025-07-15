@@ -2,10 +2,11 @@ import { createChatBotMessage } from "react-chatbot-kit";
 import logo from '../assets/logo.png';
 import ActionProvider from "./ActionProvider";
 import MessageParser from "./MessageParser";
+import Options from './Options';
 
 const config = {
     initialMessages: [
-        createChatBotMessage("Xin chào! Tôi có thể giúp gì cho bạn hôm nay?")
+        createChatBotMessage("Xin chào mình là trợ lý ảo Talkable! Bạn cần hỗ trợ gì hôm nay?", { widget: "mainOptions", })
     ],
     botName: "Talkable Assisstant",
     customStyles: {
@@ -30,6 +31,12 @@ const config = {
             />
         ),
     },
+    widgets: [
+        {
+            widgetName: "mainOptions",
+            widgetFunc: (props) => <Options {...props} />,
+        }
+    ],
     actionProvider: ActionProvider,
     messageParser: MessageParser,
 };

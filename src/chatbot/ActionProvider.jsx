@@ -1,20 +1,49 @@
 import axios from "axios";
 import teachers from '../data/teachers';
 import books from '../data/library';
-
+import { createClientMessage } from "react-chatbot-kit";
 class ActionProvider {
     constructor(createChatBotMessage, setStateFunc) {
         this.createChatBotMessage = createChatBotMessage;
         this.setState = setStateFunc;
-    }
+        this.createClientMessage = createClientMessage;
+    };
+
+    handleLanguageLearning = () => {
+        const userMsg = this.createClientMessage("Tư vấn học ngoại ngữ");
+        const botMsg = this.createChatBotMessage("Bạn muốn học ngoại ngữ nào? (Tiếng Anh, Nhật, Hàn...)");
+
+        this.setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, userMsg, botMsg],
+        }));
+    };
+
+    handleBookAdvice = () => {
+        const userMsg = this.createClientMessage("Tư vấn chọn sách");
+        const botMsg = this.createChatBotMessage("Bạn muốn tìm sách thuộc lĩnh vực nào?");
+
+        this.setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, userMsg, botMsg],
+        }));
+    };
 
     handleMessage = async (message) => {
+        let botMessage = this.createChatBotMessage("Đang lấy dữ liệu...", { loading: true });
+        this.setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, botMessage],
+        }));
+
         const prompt = `
-Tôi có danh sách giáo viên sau:
+Bạn là 1 trợ lý ảo chuyên tư vấn khóa học và sách của 1 trung tâm giáo dục về ngoại ngữ.
+Người dùng hỏi: "${message}". Hãy giao tiếp thân thiện với người dùng.
+Nếu câu hỏi của người dùng liên quan tới tìm giáo viên hay sách thì hãy gợi ý cho người dùng 1 giáo viên hoặc 1 quyển sách phù hợp và nêu ra lý do.
+Trung tâm có danh sách giáo viên như sau:
 ${teachers.map(t => `- ${t.name}, ${t.nationality}, dạy ${t.languages.join(", ")}, giá ${t.price} USD`).join("\n")}.
-Và tôi có thư viện sách như sau:
+Và trung tâm có thư viện sách như sau:
 ${books.map(b => `- Tiêu đề: ${b.title}, tác giả: ${b.author}, thể loại: ${b.type}, ngôn ngữ ${b.language}, giá ${b.price} USD`).join("\n")}.
-Người dùng hỏi: "${message}". Nếu câu hỏi của người dùng liên quan tới tìm giáo viên hay sách thì hãy gợi ý cho người dùng 1 giáo viên hoặc 1 quyển sách phù hợp và nêu ra lý do.
 `;
         try {
             const res = await axios.post(
@@ -32,12 +61,16 @@ Người dùng hỏi: "${message}". Nếu câu hỏi của người dùng liên 
             );
 
             const reply = res.data.choices[0].message.content;
-            const botMessage = this.createChatBotMessage(reply);
+            botMessage = this.createChatBotMessage(reply, { loading: false });
 
-            this.setState((prev) => ({
-                ...prev,
-                messages: [...prev.messages, botMessage],
-            }));
+            this.setState((prev) => {
+                const prevMessages = [...prev.messages];
+                prevMessages.pop();
+                return ({
+                    ...prev,
+                    messages: [...prevMessages, botMessage],
+                })
+            });
         } catch (error) {
             const errorMessage = this.createChatBotMessage(
                 "Xin lỗi, tôi gặp lỗi khi phản hồi."
