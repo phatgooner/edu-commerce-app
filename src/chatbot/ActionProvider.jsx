@@ -75,10 +75,14 @@ ${books.map(b => `- Tiêu đề: ${b.title}, tác giả: ${b.author}, thể lo�
             const errorMessage = this.createChatBotMessage(
                 "Xin lỗi, tôi gặp lỗi khi phản hồi."
             );
-            this.setState((prev) => ({
-                ...prev,
-                messages: [...prev.messages, errorMessage],
-            }));
+            this.setState((prev) => {
+                const prevMessages = [...prev.messages];
+                prevMessages.pop();
+                return ({
+                    ...prev,
+                    messages: [...prevMessages, errorMessage],
+                })
+            });
         }
     };
 }

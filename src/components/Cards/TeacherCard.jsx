@@ -6,7 +6,7 @@ import { ModalContext } from '../../context/ModalContext';
 import { UserContext } from '../../context/UserContext';
 import TeacherModal from '../Modals/TeacherModal';
 
-const TeacherCard = ({ teacher }) => {
+const TeacherCard = ({ teacher, isFromRelevant }) => {
     const { user, setFavoriteTeacher, removeFavoriteTeacher } = useContext(UserContext);
     const { setShow, setType } = useContext(ModalContext);
     const [showModal, setShowModal] = useState(false)
@@ -17,6 +17,7 @@ const TeacherCard = ({ teacher }) => {
                 show={showModal}
                 handleClose={() => setShowModal(false)}
                 teacher={teacher}
+                isFromRelevant={isFromRelevant}
             />
 
             <Row className="g-0 align-items-center card-content">
