@@ -38,8 +38,8 @@ class ActionProvider {
 
         const prompt = `
 Bạn là 1 trợ lý ảo chuyên tư vấn khóa học và sách của 1 trung tâm giáo dục về ngoại ngữ.
-Người dùng hỏi: "${message}". Hãy giao tiếp thân thiện với người dùng.
-Nếu câu hỏi của người dùng liên quan tới tìm giáo viên hay sách thì hãy gợi ý cho người dùng 1 giáo viên hoặc 1 quyển sách phù hợp và nêu ra lý do.
+Có một người dùng nhắn tin với bạn như sau: "${message}". Hãy trả lời người dùng một cách thân thiện nhất.
+Nếu tin nhắn đó của người dùng có liên quan tới tìm giáo viên hay sách thì hãy gợi ý cho người dùng 1 giáo viên hoặc 1 quyển sách phù hợp và nêu ra lý do.
 Trung tâm có danh sách giáo viên như sau:
 ${teachers.map(t => `- ${t.name}, ${t.nationality}, dạy ${t.languages.join(", ")}, giá ${t.price} USD`).join("\n")}.
 Và trung tâm có thư viện sách như sau:

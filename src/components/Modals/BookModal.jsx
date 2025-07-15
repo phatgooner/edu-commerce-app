@@ -6,7 +6,7 @@ import { ModalContext } from '../../context/ModalContext'
 import { toast } from "react-toastify";
 import RelevantBooks from './RelevantBooks';
 
-const BookModal = ({ show, handleClose, book }) => {
+const BookModal = ({ show, handleClose, book, isFromRelevant }) => {
     const { user } = useContext(UserContext);
     const { setShow, setType } = useContext(ModalContext);
     const [showRelevantModal, setShowRelevantModal] = useState(false);
@@ -47,7 +47,7 @@ const BookModal = ({ show, handleClose, book }) => {
                             <p><strong>Giá:</strong> <span className="text-danger fw-bold">${book.price.toFixed(2)}</span></p>
                         </div>
                     </div>
-                    <Button variant="outline-primary" onClick={() => { handleClose(true); setShowRelevantModal(true); }}>Xem các sản phẩm liên quan</Button>
+                    {!isFromRelevant && <Button variant="outline-primary" onClick={() => { handleClose(true); setShowRelevantModal(true); }}>Xem các sản phẩm liên quan</Button>}
                 </Modal.Body>
 
                 <Modal.Footer>

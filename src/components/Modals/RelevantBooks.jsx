@@ -12,7 +12,7 @@ const RelevantBooks = ({ showRelevant, handleCloseRelevant, bookRelevant }) => {
             </Modal.Header>
 
             <Modal.Body>
-                <BookListGenerator bookList={books} />
+                <BookListGenerator isFromRelevant={true} bookList={books} />
             </Modal.Body>
 
             <Modal.Footer>

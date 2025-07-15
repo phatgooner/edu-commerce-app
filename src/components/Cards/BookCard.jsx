@@ -6,7 +6,7 @@ import { ModalContext } from '../../context/ModalContext';
 import { UserContext } from '../../context/UserContext';
 import BookModal from '../Modals/BookModal';
 
-const BookCard = ({ book }) => {
+const BookCard = ({ isFromRelevant, book }) => {
     const { title, coverImage, price, rating } = book;
     const { user, setFavoriteBook, removeFavoriteBook } = useContext(UserContext);
     const { setShow, setType } = useContext(ModalContext);
@@ -18,6 +18,7 @@ const BookCard = ({ book }) => {
                 show={showModal}
                 handleClose={() => setShowModal(false)}
                 book={book}
+                isFromRelevant={isFromRelevant}
             />
 
             <Card.Img
