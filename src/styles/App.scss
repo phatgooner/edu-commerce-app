@@ -401,3 +401,11 @@ form {
     overflow-y: auto !important;
   }
 }
+
+@media (max-width: 768px) {
+  .loading-screen {
+    img {
+      width: 50vw;
+    }
+  }
+}
