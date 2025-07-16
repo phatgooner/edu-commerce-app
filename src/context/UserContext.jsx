@@ -39,7 +39,7 @@ export const UserProvider = ({ children }) => {
     };
 
     const updateUserToList = (newUser) => {
-        let newList = users.filter(u => u.id !== newUser.id)
+        let newList = users.filter(u => u.email !== newUser.email)
         newList.push(newUser);
         setUsers(newList);
         localStorage.setItem("users", JSON.stringify(newList));
